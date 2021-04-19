@@ -1,0 +1,56 @@
+﻿@page
+@model MyFirstService.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Pobrane z bazy danych";
+}
+
+<h1>Pobrane z bazy danych</h1>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Maker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

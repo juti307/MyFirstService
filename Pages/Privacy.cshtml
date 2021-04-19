@@ -1,0 +1,56 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Pobrane z pliku";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Product.Maker)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Product.Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Product.Url)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Product.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Product.Description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Maker)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
